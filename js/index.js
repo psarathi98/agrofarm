@@ -11,16 +11,6 @@ window.addEventListener("scroll",function(){
     
 })
 
-//login popup start
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-
-//login popup end
 
 
 let list = document.querySelector('.slider .list');
