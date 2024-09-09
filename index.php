@@ -139,21 +139,20 @@
   </div>
   <!--Carousel ending-->
 
-  
   <main class="main bd-grid">
       <article class="card">
           <div class="card__img">
               <img src="https://png.pngtree.com/png-clipart/20230411/original/pngtree-duck-poultry-animal-transparent-on-white-background-png-image_9044367.png" alt="">
           </div>
           <div class="card__name">
-              <button class = "btn-primary">BUY NOW</button>
+              <button class = "btn-primary">ORDER HERE</button>
           </div>
           <div class="card__precis">
            <!---   <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
               
               <div>
                  
-                  <span class="card__preci card__preci--now">$749.00</span>
+                  <span class="card__preci card__preci--now">Duck</span>
               </div>
             <!---  <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
           </div>
@@ -164,13 +163,13 @@
               <img src="https://cdn0.iconfinder.com/data/icons/farm-34/1200/Single_15CartoonFermaKush-512.png" alt="">
           </div>
           <div class="card__name">
-              <button class ="btn-primary">BUY NOW</button>
+              <button class ="btn-primary">ORDER HERE</button>
           </div>
           <div class="card__precis">
             <!----  <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>  -->
               <div>
                  
-                  <span class="card__preci card__preci--now">$749.00</span>
+                  <span class="card__preci card__preci--now">Eggs</span>
               </div>
             <!---  <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
           </div>
@@ -181,14 +180,14 @@
               <img src="https://png.pngtree.com/png-vector/20220926/ourmid/pngtree-organic-vegetables-tomatoes-png-image_6157172.png" alt="">
           </div>
           <div class="card__name">
-              <button class ="btn-primary">BUY NOW</button>
+              <button class ="btn-primary">ORDER HERE</button>
           </div>
           <div class="card__precis">
            <!----   <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
               
               <div>
                  
-                  <span class="card__preci card__preci--now">$749.00</span>
+                  <span class="card__preci card__preci--now">tomatoes</span>
               </div>
            <!----   <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
           </div>
@@ -199,14 +198,14 @@
               <img src="https://png.pngtree.com/png-clipart/20220927/original/pngtree-green-cucumber-vegetables-png-image_8633530.png" alt="">
           </div>
           <div class="card__name">
-              <button class ="btn-primary">BUY NOW</button>
+              <button class ="btn-primary">ORDER HERE</button>
           </div>
           <div class="card__precis">
         <!---      <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
               
               <div>
                   
-                  <span class="card__preci card__preci--now">$749.00</span>
+                  <span class="card__preci card__preci--now">cucumber</span>
               </div>
         <!---      <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
           </div>
@@ -217,14 +216,14 @@
             <img src="https://th.bing.com/th/id/R.400b050e59b8e5d6cd668b3007fee1a9?rik=CZ63A10dprLi6Q&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fcute-chicken-png-hd-specialists-in-farm-amp-animal-farm-chicken-png-chicken-png-926.png&ehk=PVT%2bRRXhpChI94i%2b0eM9J6Ciq62YCQkBp%2fOwVNolsxU%3d&risl=&pid=ImgRaw&r=0" alt="">
         </div>
         <div class="card__name">
-            <button class ="btn-primary">BUY NOW</button>
+            <button class ="btn-primary">ORDER HERE</button>
         </div>
         <div class="card__precis">
        <!---     <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
             
             <div>
                
-                <span class="card__preci card__preci--now">$749.00</span>
+                <span class="card__preci card__preci--now">Chicken</span>
             </div>
        <!---     <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
         </div>
@@ -235,14 +234,14 @@
             <img src="https://dcassetcdn.com/design_img/3810229/80753/23541915/8qxg6nf119f3636ev6e4xbnqf4_image.png" alt="">
         </div>
         <div class="card__name">
-            <button class ="btn-primary">BUY NOW</button>
+            <button class ="btn-primary">ORDER HERE</button>
         </div>
         <div class="card__precis">
            <!--- <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
             
             <div>
                 
-                <span class="card__preci card__preci--now">$749.00</span>
+                <span class="card__preci card__preci--now">Dairy Products</span>
             </div>
         <!----    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
         </div>
@@ -253,14 +252,14 @@
             <img src="https://png.pngtree.com/png-vector/20220521/ourmid/pngtree-vegetables-vegetable-veggie-farm-market-png-image_4645343.png" alt="">
         </div>
         <div class="card__name">
-            <a class ="btn-primary" href="https://wa.me/7029155528">BUY NOW</a>
+            <a class ="btn-primary" href="https://wa.me/7029155528">ORDER HERE</a>
         </div>
         <div class="card__precis">
          <!---   <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> !-->
             
             <div>
                 
-                <span class="card__preci card__preci--now">$749.00</span>
+                <span class="card__preci card__preci--now">Vegetables</span>
             </div>
           <!---- <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> !-->
         </div>
@@ -271,14 +270,14 @@
             <img src="https://webstockreview.net/images/clipart-goat-nigerian-dwarf-goat.png" alt="">
         </div>
         <div class="card__name">
-            <button class ="btn-primary">BUY NOW</button>
+            <button class ="btn-primary">ORDER HERE</button>
         </div>
         <div class="card__precis">
            <!---- <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>  !-->
             
             <div>
                
-                <span class="card__preci card__preci--now">$749.00</span>
+                <span class="card__preci card__preci--now">Fresh Meat</span>
                 
             </div>
          <!---   <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> !-->
@@ -290,14 +289,14 @@
             <img src="https://th.bing.com/th/id/R.3928891be8d69bbdb1cf211a3f8de326?rik=SzoGR4FgnBpXKA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2018%2f04%2fRice-PNG-Photo.png&ehk=WdrjU0TooR93nPM6tBryTxj1npwUsA9nbmQHXXOTu50%3d&risl=&pid=ImgRaw&r=0" alt="">
         </div>
         <div class="card__name">
-            <button class = "btn-primary">BUY NOW</button>
+            <button class = "btn-primary">ORDER HERE</button>
         </div>
         <div class="card__precis">
          <!----   <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
             
             <div>
                 
-                <span class="card__preci card__preci--now">$749.00</span>
+                <span class="card__preci card__preci--now">Rice</span>
             </div>
          <!----   <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
         </div>

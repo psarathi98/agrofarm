@@ -195,8 +195,8 @@ article:nth-child(9){
 .slider{
     width: 1600px;
     max-width: 100vw;
-    height: 500px;
-    top: 50px;
+    height: 700px;
+    /*top: 50px;*/
     position: relative;
     overflow: hidden;
 }
@@ -213,7 +213,7 @@ article:nth-child(9){
     max-width: 100vw;
     height: 700px;
     /*top: 50px;*/
-    object-fit: cover;
+    object-fit: fill;
 }
 .buttons{
     position: absolute;
@@ -266,7 +266,9 @@ article:nth-child(9){
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
-
+.item {
+    width: 100%;
+}
 
 .container .product-item {
     min-height: 450px;
