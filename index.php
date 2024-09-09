@@ -9,6 +9,8 @@ include('./php/connection.php');
     <title>Agro Farm</title>
 
     <link rel ="stylesheet" href="./css/index.css" />
+    <link rel="icon" href="./docs/images/logo/logo_title.png" type="image/icon type">
+    <link rel ="stylesheet" href="./vendor/aos/aos.css">
 
   </head>
 
@@ -68,7 +70,7 @@ $mytable = array();
   <!----Products Starting-->
 
 
-  <div id="product">
+  <div id="product" data-aos="zoom-in-right"  data-aos-duration="1500"  data-aos-easing="ease-in-sine">
   <main class="main bd-grid" >
 
     <!--Fetch products from database-->
@@ -116,8 +118,16 @@ $mytable = array();
   <!--footer start-->
  
 
+<!----JS files-->
 
   <script src="js/index.js"></script>
+  <script src="./vendor/aos/aos.js"></script>
+  
+  <script>
+    AOS.init(); // Initialize ANIMATION ON SCROLLING 
+  </script>
+
+
   
 
 </body>
