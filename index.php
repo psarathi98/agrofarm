@@ -125,32 +125,31 @@ $mytable = array();
     </div>
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Who are we?</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Our goal as an organic vegetable farm is to deliver veggies free of chemicals and preservatives. Pet animals are another thing we deal with</p>
       </div>
       <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-          <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-          <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
-          <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
-          <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+        <p href="#">Follow Us on <span aria-hidden="true">&rarr;</span></p>
+          <a href="#">Facebook </a>
+          <a href="#">Whatsapp </a>
         </div>
         <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Offices worldwide</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
+            <dt class="text-base leading-7 text-gray-300">mins Delivery time</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">30</dd>
           </div>
           <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Full-time colleagues</dt>
+            <dt class="text-base leading-7 text-gray-300">days per week available</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">7</dd>
+          </div>
+          <div class="flex flex-col-reverse">
+            <dt class="text-base leading-7 text-gray-300">Happy Clients</dt>
             <dd class="text-2xl font-bold leading-9 tracking-tight text-white">300+</dd>
           </div>
           <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Hours per week</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">40</dd>
-          </div>
-          <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">Unlimited</dd>
+            <dt class="text-base leading-7 text-gray-300">Product Quality</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">A+</dd>
           </div>
         </dl>
       </div>
@@ -165,13 +164,12 @@ $mytable = array();
 
 
 <footer class="bg-white rounded-lg shadow dark:bg-gray-900">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="w-full max-w-screen-xl mx-auto  md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src="./docs/images/logo/logo.png" class="h-14 w-14" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AgroFram</span>
             </a>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">AgroFarm</a>. All Rights Reserved.</span>
     </div>
 </footer>
