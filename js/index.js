@@ -144,7 +144,16 @@ function initMap() {
   window.initMap = initMap;
 
 
-//footer js
+//nav link active starts
+  // Smooth scroll to section
+  navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelector(e.target.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
 
 
 
