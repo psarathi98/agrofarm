@@ -1,0 +1,18 @@
+<?php 
+// Include the database configuration file  
+require_once 'Connection.php'; 
+ 
+// Get image data from database 
+$result = $mysqli->query("SELECT productimage FROM product"); 
+?>
+
+<!-- Display images with BLOB data from database -->
+<?php if($result->num_rows > 0){ ?> 
+    <div class="gallery"> 
+        <?php while($row = $result->fetch_assoc()){ ?> 
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['productimage']); ?>" /> 
+        <?php } ?> 
+    </div> 
+<?php }else{ ?> 
+    <p class="status error">Image(s) not found...</p> 
+<?php } ?>
