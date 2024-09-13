@@ -2,7 +2,8 @@
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
 
-
+ob_start();
+session_start();
 
 
 $servername = "localhost";
@@ -37,7 +38,12 @@ if ($conn->connect_error) {
   if(isset($_POST['login']))  
   {
       if(($user['userid'] == $uname) &&
-        ($user['password'] == $pin)) {
+        ($user['password'] == $pin)) 
+        {
+          $_SESSION['valid'] = true;
+          $_SESSION['timeout'] = time();
+          $_SESSION['username'] = $_POST['username'];
+          echo "Sessions variables are set";
           echo "<script type='text/javascript'>alert('Hey admin We are redirecting you to admin page');
           location='homepage.php';
           </script>";

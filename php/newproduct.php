@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(empty($_SESSION["username"])){
+  header('location: ../index.php');
+}
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>

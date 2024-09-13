@@ -1,5 +1,9 @@
 <?php
 // Include the database connection file
+session_start();
+if(empty($_SESSION["username"])){
+  header('location: ../index.php');
+}
 require_once("connection.php");
 require_once('includes/header.php'); 
 require_once('includes/navbar.php'); 

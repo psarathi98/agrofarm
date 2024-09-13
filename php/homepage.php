@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(empty($_SESSION["username"])){
+  header('location: ../index.php');
+}
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>
@@ -8,7 +12,7 @@ include('includes/navbar.php');
 
 <div class="container">
   <div>
-    <h1 class="type">Welcome Admin</h1>
+    <h1 class="type">welcome<?php echo $_SESSION['username']?></h1>
   </div>
 
   <a href="dashboard.php"><button type="button" class="btn btn-primary">View Stocks</button></a>
