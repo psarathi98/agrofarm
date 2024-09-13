@@ -10,7 +10,6 @@ include('./php/connection.php');
 
     <link rel ="stylesheet" href="./css/index.css" />
 
-    <link rel="icon" href="./docs/images/logo/logo_title.png" type="image/icon type">
   </head>
 
 <body>
