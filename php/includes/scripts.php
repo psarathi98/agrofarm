@@ -28,6 +28,7 @@ if(isset($_POST['registerbtn']))
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirmpassword'];
+    $utype='admin';
 
     if($password === $confirm_password)
     {
