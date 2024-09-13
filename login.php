@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/login.css" />
-    
+	<link rel="icon" href="./docs/images/logo/logo_title.png" type="image/icon type">
+
 	<title>Sign in form</title>
 </head>
 
