@@ -24,7 +24,7 @@ if(isset($_POST['updatebtn1']))
             // Insert image content into database 
             
             
-            $insert = $mysqli->query("INSERT into carouseltable (cimg) VALUES ('$imgContent')"); 
+            $insert = $mysqli->query("UPDATE carouseltable SET cimg = '$imgContent' WHERE cid = '$p_id'"); 
             if($insert){ 
                 $status = 'success'; 
                 $statusMsg = 'Data updated successfully' ;

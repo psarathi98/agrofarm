@@ -24,36 +24,90 @@ if ($mysqli->connect_error)
       $mysqli->connect_errno . ') '.
       $mysqli->connect_error);
 }
-$temp = 0;
 
-$result = $mysqli->query("SELECT * FROM carouseltable"); 
+
+$mytable = array();
+$tableid = array();
+$sql = " SELECT * FROM carouseltable ;";
+
+ $result = $mysqli->query($sql);
+
+ //Store table records into an array
+ while( $row = $result->fetch_assoc() ) {
+ $mytable[] = $row;
+ }
+
 ?>
 
 
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="height:10%; width:20%; margin-left:50px">
-    View carousel
-  </button>
+<?php
+$servername = "localhost";
+$username = "root"; // replace with your database username
+$password = ""; // replace with your database password
+$dbname = "adminrecord"; // replace with your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+
+
+
+       
+    
+
+    <form method="get" action="carousel.php"> 
+    <label for="cars">Choose a Motku</label>
+    <select name="img" id="img">
+    
+
+    <?php foreach($mytable as $table)  { ?>
+
+    <option value="<?php echo $table['cid']?>">Motki no <?php echo $table['cid']?></option>
+ 
+
+    
+    <?php } ?>
+    </select>
+
+    <br><br>
+  <input type="submit" value="Submit">
+    </form>
+
+
+    <?php
+if(isset($_GET['img']))
+{
+$val1=$_GET['img']; echo "bubu hu mein bubu";
+$sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $val1);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Fetch the image path
+ 
+
+     if ($row = $result->fetch_assoc()) { ?>
+        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']);?>" width="800" height="400" />
+
+        <button type="button" class="btn btn-success" style="margin-top:10px" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+
+<?php } }?>
+
+
+
   
 
- <div class="collapse" id="collapseExample" style="margin-top: 100px; margin-left: 30px;">
-    <?php if($result->num_rows > 0){ ?> 
-        <div class="gallery"> 
-            <?php while($row = $result->fetch_assoc()){ ?> 
-                
-                <input type="hidden" name="edit_id" value="<?php echo $row['cid']; $temp = $row['cid'] ?>">
-                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']); ?>" width="800" height="400" /> 
-            <?php } ?> 
-        </div> 
-    <?php }else{ ?> 
-        <p class="status error">Image(s) not found...</p> 
-    <?php } ?>
-       
-        <button type="button" class="btn btn-success" style="margin-top:10px" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
-    
-</div>
 
 
- 
+
+   
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -70,7 +124,7 @@ $result = $mysqli->query("SELECT * FROM carouseltable");
 			    <form method='post' action='carouseledit.php' enctype="multipart/form-data">
 				Select file : <input type='file' name='image' id='file' class='form-control' ><br>
                 
-                <input type="hidden" name="edit_id" value="<?php echo $temp; ?>"> 
+                <input type="text" name="edit_id" value="<?php echo $val1; ?>"> 
 				<button class="btn btn-success" type="submit" name="updatebtn1">Upload</button>
 
 				</form>
@@ -79,9 +133,9 @@ $result = $mysqli->query("SELECT * FROM carouseltable");
 			</div>
 
 		</div>
-	</>
+	</div>
+</div>
 
-</d>
 
         
      

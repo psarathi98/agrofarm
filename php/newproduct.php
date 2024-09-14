@@ -6,7 +6,7 @@ include('includes/navbar.php');
 <form action="addaction.php" method="post" enctype="multipart/form-data">
  <div class="col-md-6">
     <label for="id" class="form-label">Procut id</label>
-    <input type="number" class="form-control" name="pid">
+    <input type="disable" class="form-control" name="pid">
   </div>
   <div class="col-md-6">
     <label for="name" class="form-label">Procut name</label>

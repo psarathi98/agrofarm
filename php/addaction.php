@@ -6,7 +6,7 @@ include('connection.php');?>
 $status = $statusMsg = ''; 
 if(isset($_POST['uploadbtn']))
 {
-    $p_id = $_POST['pid'];
+   
     $p_name = $_POST['pname'];
     $p_price = $_POST['pprice'];
 
@@ -24,7 +24,7 @@ if(isset($_POST['uploadbtn']))
          
             // Insert image content into database 
             
-            $insert = $mysqli->query("INSERT into product (id,productname,productprice,productimage) VALUES ('$p_id','$p_name','$p_price','$imgContent')"); 
+            $insert = $mysqli->query("INSERT into product (productname,productprice,productimage) VALUES ('$p_name','$p_price','$imgContent')"); 
             if($insert){ 
                 $status = 'success'; 
                 $statusMsg = "File uploaded successfully."; 

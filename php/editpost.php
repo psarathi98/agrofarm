@@ -10,7 +10,7 @@ if(isset($_POST['update_btn']))
     $p_id = $_POST['edit_id'];
     $p_name = $_POST['pname'];
     $p_price = $_POST['price'];
-    $query =  "UPDATE product SET id = '$p_id', productname ='$p_name', productprice ='$p_price' WHERE id='$p_id'";
+    $query =  "UPDATE product SET productname ='$p_name', productprice ='$p_price' WHERE id='$p_id'";
     $query_run= mysqli_query($mysqli, $query);
     if($query_run){ 
         $status = 'success'; 
