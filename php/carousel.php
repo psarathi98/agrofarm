@@ -13,16 +13,13 @@ $database = 'adminrecord';
 // Server is localhost with
 // port number 3306
 $servername='localhost';
-$mysqli = new mysqli($servername, $user,
+$conn = mysqli_connect($servername, $user,
         $password, $database);
 
 // Checking for connections
 
-if ($mysqli->connect_error)
-{
-      die('Connect Error (' .
-      $mysqli->connect_errno . ') '.
-      $mysqli->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 
@@ -30,7 +27,7 @@ $mytable = array();
 $tableid = array();
 $sql = " SELECT * FROM carouseltable ;";
 
- $result = $mysqli->query($sql);
+ $result = $conn->query($sql);
 
  //Store table records into an array
  while( $row = $result->fetch_assoc() ) {
@@ -39,72 +36,64 @@ $sql = " SELECT * FROM carouseltable ;";
 
 ?>
 
-
-<?php
-$servername = "localhost";
-$username = "root"; // replace with your database username
-$password = ""; // replace with your database password
-$dbname = "adminrecord"; // replace with your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
-
-
-
-
-       
-    
-
-    <form method="get" action="carousel.php"> 
-    <label for="cars">Choose a Motku</label>
-    <select name="img" id="img">
-    
-
-    <?php foreach($mytable as $table)  { ?>
-
-    <option value="<?php echo $table['cid']?>">Motki no <?php echo $table['cid']?></option>
  
 
-    
-    <?php } ?>
-    </select>
 
-    <br><br>
-  <input type="submit" value="Submit">
-    </form>
+<div>
+</div>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+<div class="dropdown d-inline-flex justify-content-center px-5 ">
+  <label for="dropdown d-inline-flex justify-content-end p-5">Choose Carousel</label>
+  <span class="p-3"></span>
+  <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    --select--
+  </button>
+  <form method="get" action="carousel.php">
+  <ul class="dropdown-menu">
+    
+  <?php foreach($mytable as $table)  { ?>
+    <li><button class="dropdown-item" type="submit" value="<?php echo $table['cid']?>" name="img" id="img" >carousel<?php echo $table['cid']?></button></li>
+    <?php } ?>
+  </ul>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
 
 
     <?php
 if(isset($_GET['img']))
 {
-$val1=$_GET['img']; echo "bubu hu mein bubu";
+$val1=$_GET['img']; 
 $sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $val1);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result1 = $stmt->get_result();
 
     // Fetch the image path
  
 
-     if ($row = $result->fetch_assoc()) { ?>
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']);?>" width="800" height="400" />
-
-        <button type="button" class="btn btn-success" style="margin-top:10px" data-toggle="modal" data-target="#exampleModalCenter">Change</button>
+     if ($row = $result1->fetch_assoc()) { ?>
+     <div class="gallery mx-auto p-5">
+        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']);?>" width="800" height="400" margin-top="50%"/>
+     </div>
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" margin-top="50px">
+  Change
+</button>
 
 <?php } }?>
-
-
-
-  
-
-
 
 
    
@@ -115,20 +104,21 @@ $sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
 
 			<!-- Modal content-->
 		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			
+        <div class="modal-header">
+				<button type="button" class="close" data-bs-dismiss="modal">&times;</button>
 			
 			</div>
+			
 			<div class="modal-body">
 				<!-- Form -->
 			    <form method='post' action='carouseledit.php' enctype="multipart/form-data">
 				Select file : <input type='file' name='image' id='file' class='form-control' ><br>
                 
-                <input type="text" name="edit_id" value="<?php echo $val1; ?>"> 
+                <input type="hidden" name="edit_id" value="<?php echo $val1; ?>"> 
 				<button class="btn btn-success" type="submit" name="updatebtn1">Upload</button>
 
 				</form>
-
 							
 			</div>
 

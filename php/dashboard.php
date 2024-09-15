@@ -74,7 +74,7 @@ $mytable[] = $row;
             <td><?php echo $table['id'];?></td>
             <td><?php echo $table['productname'];?></td>
             <td><?php echo $table['productprice'];?></td>
-            <td><img src="data:image/jpeg;base64,<?php echo base64_encode($table['productimage']); ?>" width="250" height="150" /></td>
+            <td><img src="data:image/jpeg;base64,<?php echo base64_encode($table['productimage']); ?>" width="170" height="140" /></td>
 
            
             <td>
