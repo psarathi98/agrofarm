@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*-- VARIABLES CSS--*/
 /*Colores*/
 :root{
-    --first-color: #E3F8FF;
+    --first-color: #f7cecb;
     --second-color: #DCFAFB;
     --third-color: #FFE8DF;
-    --accent-color: #f8c1c1;
+    --accent-color: #9ec0f3;
     --dark-color: #161616;
 	--fourth-color: #d8c3ed;
 	--fifth-color: #ddf1cc;
@@ -82,6 +84,8 @@ a{
     border-radius: 1rem;
     overflow: hidden;
 	margin-top: 5.0rem;
+    width:100%;
+    height:80%;
 }
 article:nth-child(1){
     background-color: var(--first-color);
@@ -112,12 +116,7 @@ article:nth-child(8){
 article:nth-child(9){
     background-color: var(--fourth-color);
 }
-.card__img{
-    width: 180px;
-    height: auto;
-    padding: 3rem 0;
-    transition: .5s;
-}
+
 .card__name{
     position: absolute;
     left: -25%;
@@ -160,6 +159,13 @@ article:nth-child(9){
     font-size: var(--h3-font-size);
     font-weight: bold;
 	justify-items: center;
+}
+
+.card__img{
+    width: 70%;
+    height: 70%;
+    padding: 3rem 0;
+    transition: .5s;
 }
 /*Move left*/
 .card:hover{

@@ -1,6 +1,6 @@
 <?php
-include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('newnavbar.php');
+
 ?>
 
 <?php
@@ -36,12 +36,7 @@ $sql = " SELECT * FROM carouseltable ;";
 
 ?>
 
- 
 
-
-<div>
-</div>
-</div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,14 +47,14 @@ $sql = " SELECT * FROM carouseltable ;";
   
 </head>
 <body>
-<div class="dropdown d-inline-flex justify-content-center px-5 ">
-  <label for="dropdown d-inline-flex justify-content-end p-5">Choose Carousel</label>
-  <span class="p-3"></span>
-  <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="d-grid mx-auto px-5 ">
+  <label for="dropdown" class="px-5 mt-5">Choose Carousel</label>
+  <span class="px-3"></span>
+  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
     --select--
   </button>
   <form method="get" action="carousel.php">
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     
   <?php foreach($mytable as $table)  { ?>
     <li><button class="dropdown-item" type="submit" value="<?php echo $table['cid']?>" name="img" id="img" >carousel<?php echo $table['cid']?></button></li>
@@ -67,7 +62,7 @@ $sql = " SELECT * FROM carouseltable ;";
   </ul>
   </form>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
   </body>
 </html>
 
@@ -86,13 +81,14 @@ $sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
  
 
      if ($row = $result1->fetch_assoc()) { ?>
-     <div class="gallery mx-auto p-5">
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']);?>" width="800" height="400" margin-top="50%"/>
+     <div class="d-grid mx-auto mt-5">
+        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['cimg']);?>" width="800" height="400"/>
      </div>
-     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" margin-top="50px">
-  Change
-</button>
-
+      
+     <div class="d-grid gap-2 col-2 mx-auto mt-5">
+  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Change here</button>
+  
+</div>
 <?php } }?>
 
 
@@ -105,8 +101,8 @@ $sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
 			<!-- Modal content-->
 		<div class="modal-content">
 			
-        <div class="modal-header">
-				<button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">&times;</button>
 			
 			</div>
 			
@@ -116,7 +112,7 @@ $sql = "SELECT cimg FROM carouseltable WHERE cid = ?";
 				Select file : <input type='file' name='image' id='file' class='form-control' ><br>
                 
                 <input type="hidden" name="edit_id" value="<?php echo $val1; ?>"> 
-				<button class="btn btn-success" type="submit" name="updatebtn1">Upload</button>
+				        <button class="btn btn-success" type="submit" name="updatebtn1">Upload</button>
 
 				</form>
 							

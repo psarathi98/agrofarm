@@ -98,7 +98,7 @@ $mytable = array();
            <!---   <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a> -->
               
               <div>
-                <span class="card__preci card__preci--now"><?php echo $table['productname']?></span>
+                  <span class="card__preci card__preci--now"><?php echo $table['productname']?></span>
                   <span class="card__preci card__preci--now">₹<?php echo $table['productprice']?></span>
               </div>
             <!---  <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a> -->
@@ -163,16 +163,40 @@ $mytable = array();
 
 
 
-<footer class="bg-white rounded-lg shadow dark:bg-gray-900">
-    <div class="w-full max-w-screen-xl mx-auto  md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="./docs/images/logo/logo.png" class="h-14 w-14" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AgroFram</span>
-            </a>
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">AgroFarm</a>. All Rights Reserved.</span>
+  <section class="bg-gray-100" id="contactus">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
+            <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="mt-16 lg:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative h-0 overflow-hidden mb-6" style="padding-bottom: 56.25%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29406.64246221055!2d87.76416386201629!3d22.88272612337931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1726754675957!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-</footer>
+                <div>
+                    <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
+                            <p class="mt-1 text-gray-600">Arambagh,West Bengal</p>
+                        </div>
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Hours</h3>
+                            <p class="mt-1 text-gray-600">Monday - Friday: 9am - 5pm</p>
+                            <p class="mt-1 text-gray-600">Saturday: 10am - 4pm</p>
+                            <p class="mt-1 text-gray-600">Sunday: Closed</p>
+                        </div>
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Contact</h3>
+                            <p class="mt-1 text-gray-600">Email: info@example.com</p>
+                            <p class="mt-1 text-gray-600">Phone: +1 23494 34993</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
