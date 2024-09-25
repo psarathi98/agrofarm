@@ -7,46 +7,49 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
 </head>
 <body>
 <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
-                    <!-- Content For Sidebar -->
-                    <div class="h-100">
-                        <div class="sidebar-logo">
-                            <a href="index.php">Agrofarm</a>
-                        </div>
-                        <ul class="sidebar-nav">
-                            <li class="sidebar-header">
-                                Admin Elements
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="index.php">Agrofarm</a>
+                </div>
+                <ul class="sidebar-nav active">
+                    <li class="sidebar-header">
+                        Dashboard
+                    </li>
+                    <li class="sidebar-item mt-4">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Products
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list collapse" data-bs-parent="#accordionsidebar">
+                            <li class="sidebar-item mt-3">
+                                <a href="dashboard.php" class="sidebar-link">view products</a>
                             </li>
-                            <li class="sidebar-item mt-4">
-                                <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
-                                    <i class="fa-solid fa-list pe-2"></i>
-                                    Products
-                                </a>
-                                <ul id="pages" class="sidebar-dropdown list collapse" data-bs-parent="#sidebar">
-                                    <li class="sidebar-item mt-4">
-                                        <a href="dashboard.php" class="sidebar-link">view products</a>
-                                    </li>
-                                    <li class="sidebar-item mt-4">
-                                        <a href="newproduct.php" class="sidebar-link">Add new product</a>
-                                    </li>
-                                </ul>
+                            <li class="sidebar-item mt-3">
+                                <a href="newproduct.php" class="sidebar-link">Add new product</a>
                             </li>
-                            <li class="sidebar-item mt-4">
-                                <a href="carousel.php" class="sidebar-link" ><i class="fas fa-fw fa-chart-area pe-2"></i>
-                                    carousel
-                                </a>
-                            
-                            </li>
-        
-                            
-                            
                         </ul>
-                    </div>
-                </aside>
+                    </li>
+                    <li class="sidebar-item mt-3">
+                        <a href="carousel.php" class="sidebar-link" ><i class="fas fa-fw fa-chart-area pe-2"></i>
+                            carousel
+                        </a>
+                       
+                   </li>
 
+                    
+                    
+                    
+                </ul>
+            </div>
+        </aside>
 
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">

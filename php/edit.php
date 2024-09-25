@@ -10,6 +10,22 @@ $mytable = array();
 ?>
 
 
+
+<!DOCTYPE html>
+<lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+
+
 <div class="container-fluid">
 
 <!-- DataTales Example -->
@@ -35,7 +51,7 @@ $mytable = array();
                     <?php
                         foreach($mytable as $table)  {?>
 
-			<form action ="editpost.php" method ="POST"  enctype='multipart/form-data'>
+			<form id="myForm" method="get" action="edit.php" enctype='multipart/form-data'>
 				<input type="hidden" name="edit_id" value="<?php echo $table['id'] ?>">
 					<div class="form-group">
 						<label> Name </label>
@@ -56,9 +72,39 @@ $mytable = array();
 					<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#uploadModal">
 					Change
 					</button>
-					<button class="btn btn-success" type="submit" name="update_btn">Save changes</button>
+					<button class="btn btn-success m-1" type="submit" data-bs-toggle="modal" data-bs-target="#statusSuccessModal" name="update_btn">Save changes</button>
 
-					<!-- Modal -->
+					<!-- Modal --><?php
+					if(isset($_GET['update_btn']))
+{
+    $p_id = $_GET['edit_id'];
+    $p_name = $_GET['pname'];
+    $p_price = $_GET['price'];
+    $query =  "UPDATE product SET productname ='$p_name', productprice ='$p_price' WHERE id='$p_id'";
+    $stmt = mysqli_query($mysqli,$query);
+    if ($stmt) { ?>
+        <div class = "container p-5">
+        <div class = "row">
+            <div class="modal fade" id="statusSuccessModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+                        <div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+                            <div class="modal-content"> 
+                                <div class="modal-body text-center p-lg-4"> 
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                                        <circle class="path circle" fill="none" stroke="#198754" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                                        <polyline class="path check" fill="none" stroke="#198754" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /> 
+                                    </svg> 
+                                    <h4 class="text-success mt-3">Oh Yeah!</h4> 
+                                    <p class="mt-3">You have successfully registered and logged in.</p>
+                                    <button type="button" class="btn btn-sm mt-3 btn-success" data-bs-dismiss="modal">Ok</button> 
+                                </div> 
+                            </div> 
+                        </div> 
+            </div>
+        </div>
+    </div>
+    
+      <?php  } } ?>
+
 					
 
 				<!-- Modal -->
@@ -73,7 +119,7 @@ $mytable = array();
 						</div>
 						<div class="modal-body">
 							<!-- Form -->
-							<form name="formName" method='post' action='editpost.php' enctype="multipart/form-data"  onsubmit="return validate();">
+							<form id="myForm" enctype="multipart/form-data">
 							Select file : <input type='file' name='image' id='file' class='form-control' ><br>
 							<button class="btn btn-success" type="submit" name="updatebtn">Upload</button>
 
@@ -97,18 +143,23 @@ $mytable = array();
 			
 			?>
 			
+			<div id="message"></div>
 			
 		</div>
   	</div>
 </div>
-</div>
 
-<script language="javascript">
 
-function validate() {
-    if (document.forms['formName'].elements['subject'].value == '') {
-        alert("Please enter a subject!");
-        return false;
-    }
-}
-</script>
+
+</body>
+</html>
+
+<?php
+include('connection.php');
+?>
+
+
+
+
+
+

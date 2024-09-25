@@ -11,6 +11,8 @@
     </h6>
   </div>
 
+ 
+
   <?php
 $user = 'root';
 $password = '';
@@ -48,6 +50,8 @@ $mytable[] = $row;
 
 
   <div class="card-body" >
+
+  
 
     <div class="table-responsive">
 
@@ -107,7 +111,4 @@ $mytable[] = $row;
 
 </div>
 <!-- /.container-fluid -->
-
-
-
 
