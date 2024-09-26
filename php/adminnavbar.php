@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/adminpanel.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 
@@ -65,7 +65,10 @@
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <a href="#" class="dropdown-item">Profile</a>
                                     <a href="#" class="dropdown-item">Setting</a>
-                                    <a href="../index.php" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
                                 </div>
                             </li>
                         </ul>
@@ -77,8 +80,26 @@
                 <i class="fa-regular fa-moon"></i>
             </a>
             
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../index.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
                
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="styles1.js"></script>
+    <script src="js/adminpanel.js"></script>
 </body>
 </html>

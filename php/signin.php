@@ -36,7 +36,7 @@ if ($conn->connect_error) {
       if(($user['userid'] == $uname) &&
         ($user['password'] == $pin)) {
           echo "<script type='text/javascript'>alert('Hey admin We are redirecting you to admin page');
-          location='test1.php';
+          location='adminHomepage.php';
           </script>";
       }
       else if(($user['userid'] == $uname) &&
