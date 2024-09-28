@@ -38,7 +38,7 @@ $mytable = array();
                     <?php
                         foreach($mytable as $table)  {?>
 
-			<form id="myForm" method="post" action="productEditAction.php" enctype='multipart/form-data'>
+			<form id="myForm" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype='multipart/form-data'>
 				<input type="hidden" name="edit_id" value="<?php echo $table['id'] ?>">
 					<div class="form-group">
 						<label> Name </label>
@@ -59,7 +59,7 @@ $mytable = array();
 					<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#uploadModal">
 					Change
 					</button>
-					<button class="btn btn-success m-1" type="submit" data-bs-toggle="modal" data-bs-target="#statusSuccessModal" name="update_btn">Save changes</button>
+					<button class="btn btn-success m-1" type="submit" name="update_btn">Save changes</button>
 
 					
     
@@ -108,12 +108,93 @@ $mytable = array();
 </div>
 
 
+
+
+
 <?php
 include('connection.php');
+
+
+if(isset($_POST['update_btn']))
+{
+    $p_id = $_POST['edit_id'];
+    $p_name = $_POST['pname'];
+    $p_price = $_POST['price'];
+    $query =  "UPDATE product SET productname ='$p_name', productprice ='$p_price' WHERE id='$p_id'";
+    $stmt = mysqli_query($mysqli,$query);
+    if ($stmt) { 
+        
+		echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+		<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+		<strong>Holy guacamole!</strong> Data updated successfully!
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	  </div>';
+	  header('Refresh: 5; url=dashboard.php');
+exit();
+    }  
+    
+}
+else if(isset($_POST['updatebtn']))
+{
+
+    $p_id = $_POST['edit_id'];
+    $p_name = $_POST['pname'];
+    $p_price = $_POST['price'];
+    if(!empty($_FILES["image"]["name"])) { 
+        // Get file info 
+        $fileName = basename($_FILES["image"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['image']['tmp_name']; 
+            $imgContent = addslashes(file_get_contents($image)); 
+         
+            // Insert image content into database 
+            
+            $insert =  "UPDATE product SET id = '$p_id', productname ='$p_name', productprice ='$p_price', productimage ='$imgContent' WHERE id='$p_id'";
+            $query_run = mysqli_query($mysqli, $insert);
+            if($query_run){ 
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <strong>Hey admin</strong> data updated successfully!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>';
+            }else{ 
+				'<div class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+				<strong>Hey admin</strong> file uploaded failed! please try again
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>';
+            }  
+        }else{ 
+			'<div class="alert alert-warning d-flex align-items-center alert-dismissible fade show" role="alert">
+			<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+			<strong>Hey admin</strong> Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload!!
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>';
+        } 
+    }else{ 
+        '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <strong>Hey admin</strong> please select an image file to upload!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>';
+    } 
+} 
+ 
+// Display status message 
+
 ?>
-
-
-
-
-
 

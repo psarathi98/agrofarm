@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(empty($_SESSION["username"])){
+  header('location: ../index.php');
+}
+?>
+
+
+
+
+
 <?php include('adminnavbar.php');
 ?>
 
@@ -89,7 +100,7 @@ $mytable[] = $row;
                 </form>
             </td>
             <td>
-                <form method="post" action="productEditAction.php">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <input type="hidden" name="delete_id" value="<?php echo $table['id']; ?>">
                   <button type="submit" name="delete_btn" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
@@ -111,4 +122,33 @@ $mytable[] = $row;
 
 </div>
 <!-- /.container-fluid -->
+
+
+
+<?php //delete.php
+require_once('connection.php');
+
+if(isset($_POST['delete_btn']))
+{
+    $id = $_POST['delete_id'];
+
+    $query = "DELETE FROM product WHERE id='$id' ";
+    $query_run = mysqli_query($mysqli, $query);
+
+    if($query_run)
+    {
+        echo 
+"<script type='text/javascript'>alert('DELETED!!.');
+        </script>"; 
+    }
+    else
+    {
+        echo "<script type='text/javascript'>alert('Can't be DELETED!!.');
+        location='dashboard.php';</script>"; 
+    }    
+}
+?>
+
+
+
 

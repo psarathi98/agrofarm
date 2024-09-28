@@ -1,3 +1,37 @@
+<?php 
+include('connection.php');
+
+if(isset($_POST['passwordeditbtn'])) {
+    $user = $_POST['username'];
+   
+    $pass = $_POST['password'];
+    $confirm_password = $_POST['confirmpassword'];
+    
+
+    $query = "UPDATE admin SET userid ='$user', password ='$pass'";
+    $query_run = mysqli_query($mysqli, $query);
+    
+        if($query_run) 
+        {
+        
+        
+          echo '<div class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <strong>Holy guacamole!</strong> Password has been changed successfully!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>';
+        }
+        
+        else { 
+            echo "Error: ". $query. "<br>". mysqli_error($mysqli);
+        }
+        
+    }     
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +84,8 @@
                 </ul>
             </div>
         </aside>
-
-        <div class="main">
-            <nav class="navbar navbar-expand px-3 border-bottom">
+ <div class = "main">
+ <nav class="navbar navbar-expand px-3 border-bottom">
                     <button class="btn" id="sidebar-toggle" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -64,7 +97,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <a href="#" class="dropdown-item">Profile</a>
-                                    <a href="#" class="dropdown-item">Setting</a>
+                                    <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#resetpassword">Setting</a>
                                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -75,12 +108,12 @@
                     </div>
                 </nav>
 
+        
                 <a href="#" class="theme-toggle">
                 <i class="fa-regular fa-sun"></i>
                 <i class="fa-regular fa-moon"></i>
             </a>
-            
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -93,13 +126,90 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../index.php">Logout</a>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-               
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/adminpanel.js"></script>
 </body>
 </html>
+
+<?php
+include('connection.php');
+
+$sql = " SELECT * FROM admin ";
+$result = $mysqli->query($sql);
+
+?>
+
+
+<script>
+      function matchPass(){
+        var firstpassword=document.form.password.value;
+        var secondpassword=document.form.confirmpassword.value;
+        
+        if(firstpassword==secondpassword){
+        return true;
+        }
+        else{
+        alert("password must be same!");
+        return false;
+        }
+        }
+        
+  </script>
+    
+<div class="modal fade" id="resetpassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reset profile password</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+              <?php
+                    // LOOP TILL END OF DATA
+                    while($rows=$result->fetch_assoc())
+                    {
+              ?>
+
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form" onsubmit="return matchPass()" novalidate="true">
+            <div class="modal-body">
+            
+                <div class="form-group">
+                    <label class="form-label mt-4"> Username </label>
+                    <input type="text" name="username" class="form-control" placeholder="Enter Username" value="<?php echo $rows['userid'] ?>">
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-label mt-4">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label mt-4">Confirm Password</label>
+                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                </div>
+            
+           </div>
+            <?php } ?>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" name="passwordeditbtn" class="btn btn-success">Save</button>
+            </div>
+            
+       </form>
+
+    </div>
+  </div>
+</div>
+               
+            
+
+

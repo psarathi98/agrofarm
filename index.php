@@ -169,16 +169,17 @@ $mytable = array();
             <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
             <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        <div class="mt-16 lg:mt-20">
+        <div class="mt-12 lg:mt-14">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="relative h-0 overflow-hidden mb-6" style="padding-bottom: 56.25%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29406.64246221055!2d87.76416386201629!3d22.88272612337931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1726754675957!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+            <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1837.4852771434496!2d87.79420837070303!3d22.91445690555633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f815f47e6798ef%3A0x775ff8193676822f!2sA%20B%20Agro%20Farm%20Arambagh!5e0!3m2!1sen!2sin!4v1727422664657!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+   
                 <div>
                     <div class="max-w-full mx-auto rounded-lg overflow-hidden">
                         <div class="px-6 py-4">
                             <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
-                            <p class="mt-1 text-gray-600">Arambagh,West Bengal</p>
+                            <p class="mt-1 text-gray-600">Ward No-09, Arambagh, Nawpara, Canal Road, opposite of Gita Rice mill, Arambag, West Bengal 712601l</p>
                         </div>
                         <div class="border-t border-gray-200 px-6 py-4">
                             <h3 class="text-lg font-medium text-gray-900">Hours</h3>
